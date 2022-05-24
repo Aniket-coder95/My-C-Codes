@@ -40,6 +40,20 @@ void push(struct node** head_ref , int x ){
     return;
 }
 
+void insertMid(struct node* prevnode , int addData){
+    if(prevnode == NULL){
+        printf("can not insert at null\n");
+        return;
+    }
+
+    struct node* newnode = (struct node*)malloc(sizeof(struct node));
+    newnode->data = addData;
+    newnode->next = prevnode->next;
+    prevnode->next = newnode;
+    return;
+
+}
+
 
 
 void printList(struct node* n){
@@ -61,7 +75,7 @@ int main()
     head = (struct node*)malloc(sizeof(struct node));
     first = (struct node*)malloc(sizeof(struct node));
     
-    head->data = 123;
+    head->data = 10;
     head->next = first;
 
     first->data = 13;
@@ -69,13 +83,16 @@ int main()
 
     //insert at last
     append(&head , 16);
-    append(&head , 116);
+    append(&head , 17);
 
     //insert element at begining
     push(&head , 7);
     push(&head , 11);
 
-    
+    //insert into middle
+    // insertAfter(head->next->next);
+    insertMid(head->next->next->next->next->next->next , 67234);
+    // printf("%d \n",(head->next->next->next->next->next->next)->data);
 
     printList(head);
 
