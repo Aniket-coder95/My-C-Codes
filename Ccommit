@@ -1,0 +1,6 @@
+echo "what is commit msg?"
+read commitMsg
+cd /Desktop/My-C-Codes
+git add .
+git commit -m commitMsg
+git push origin main
