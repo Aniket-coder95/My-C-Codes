@@ -1,5 +1,5 @@
 echo "What is the commit Message ?"
 read commitMessage
-git add .
-git commit -m commitMessage
-git push origin main
+sudo git add .
+sudo git commit -m commitMessage
+sudo git push origin main
