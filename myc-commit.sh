@@ -1,5 +1,5 @@
 echo "What is the commit Message ?"
-read Message
+read codeupdate
 sudo git add .
-sudo git commit -m Message
+sudo git commit -m codeupdated
 sudo git push origin main
