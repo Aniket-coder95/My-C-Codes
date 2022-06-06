@@ -1,7 +1,14 @@
+
 #include <stdio.h>
-#include <string.h>
+
 int main()
-{     
-  printf("The string is not a Palindrome\n");
-  return 0;
+{
+    int a,b,c;
+    
+    a=0x10; b=010;
+    c=a+b;
+    
+    printf("%d",c);
+    
+    return 0;
 }
