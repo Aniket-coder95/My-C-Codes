@@ -22,11 +22,11 @@ int main()
     }
         if(*p2 == *p1 || *p2 == *(p1-1))
         {
-            printf("The string %s is a Palindrome",str);
+            printf(" is a Palindrome\n");
         }
         else
         {
-            printf("The string %s is not a Palindrome",str);
+            printf(" is not a Palindrome\n");
         }
     return 0;
 }

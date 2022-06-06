@@ -22,16 +22,17 @@ void distinctElementList(struct node* head){
 
     if(curr->link != NULL){
         struct node* prev = NULL;
-        struct node* temp = next;
+        // struct node* temp = next;
         
-        while (temp != NULL && temp->data == curr->data)
+        while (next!= NULL && next->data == curr->data)
         {
-            prev = temp;
-            temp = temp->link;
+            prev = next;
+            next = next->link;
         }
-        curr->link = temp;
+        curr->link = next;
         prev->link =NULL;
-        distinctElementList(temp);
+        if(next == NULL) return; //for continuous same element or if last two diff element remove if will work fine
+        distinctElementList(next);
     }
     return;
 }
@@ -47,6 +48,9 @@ int main()
     struct  node* n5;
     struct  node* n6;
     struct  node* n7;
+    struct  node* n8;
+    struct  node* n9;
+    struct  node* n10;
 
     
     head = (struct node*)malloc(sizeof(struct node));
@@ -57,6 +61,9 @@ int main()
     n5 = (struct node*)malloc(sizeof(struct node));
     n6 = (struct node*)malloc(sizeof(struct node));
     n7 = (struct node*)malloc(sizeof(struct node));
+    n8 = (struct node*)malloc(sizeof(struct node));
+    n9 = (struct node*)malloc(sizeof(struct node));
+    n10 = (struct node*)malloc(sizeof(struct node));
 
     head->data = 1;
     head->link =n1;
@@ -80,11 +87,21 @@ int main()
     n6->link =n7;
 
     n7->data = 4;
-    n7->link =NULL;
-    printf("\nInitial linklist : \n");
+    n7->link =n8;
+
+    n8->data = 4;
+    n8->link =n9;
+
+    n9->data = 4;
+    n9->link =n10;
+
+    n10->data = 4; //case if continuous same element or last two diff element
+    n10->link =NULL;
+
+    printf("\nInitial linklist : ");
     printlist(head);
     distinctElementList(head);
-    printf("\nList after removing repeating element : \n");
+    printf("\nList after removing repeating element : ");
     printlist(head);
 
     return 0;
