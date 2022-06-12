@@ -90,7 +90,7 @@ int main()
 
     a7->data = 18;
     a7->flag = 0 ;
-    a7->next = a3;
+    a7->next = a3; // meake null for removing loop;
 
     // printf("initial list \n");
     // int count = printList(head);
